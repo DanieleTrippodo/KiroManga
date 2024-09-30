@@ -10,3 +10,7 @@ app.component('example-component', ExampleComponent);
 
 createApp(App).use(router).mount('#app');
 app.mount('#app');
+
+createApp(App)
+  .use(router)
+  .mount('#app');

@@ -1,4 +1,10 @@
 <!doctype html>
+
+<meta name="csrf-token" content="{{ csrf_token() }}">
+@auth
+<meta name="user-id" content="{{ Auth::user()->id }}">
+@endauth
+
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
