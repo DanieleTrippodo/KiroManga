@@ -1,24 +1,12 @@
 import './bootstrap';
+import { createApp } from 'vue';
+import App from './App.vue';
+import router from './router';
 
-//prende il JS di Bootstrap
-import * as bootstrap from 'bootstrap';
+const app = createApp({});
 
-import '../scss/app.scss';
-import './bootstrap';
+import ExampleComponent from './components/ExampleComponent.vue';
+app.component('example-component', ExampleComponent);
 
-
-
-
-// ? ----------Importazioni Immagini----------------
-// per creare una scorciatoia per l'importazione di immagini
-import.meta.glob([
-    '../img/**'
-]);
-/*
-*   How to use Image import:
-*
-*   <img src="{{ vite::asset('resources/img/NAMEIMG.jpg') }}" alt="NAME">
-*
-*/
-// ? ----------Importazioni Immagini----------------
-
+createApp(App).use(router).mount('#app');
+app.mount('#app');
